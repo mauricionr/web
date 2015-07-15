@@ -1,0 +1,27 @@
+section.auth-page {
+}
+section.auth-page > .content {
+	margin-top: 150px;
+}
+section.auth-page h1 {
+	text-align: center;
+	font-size: 1.5em;
+	letter-spacing: .2em;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+section.auth-page form {
+	width: 350px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+section.auth-page .button {
+	float: right;
+	margin: 0;
+}
+
+section.auth-page h2 {
+	margin-bottom: 20px;
+  	font-size: 0.9em;
+}

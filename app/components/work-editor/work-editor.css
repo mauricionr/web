@@ -1,0 +1,43 @@
+section.work-editor {
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    background: #fff;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #dcdcdc;
+    z-index: 100;
+    padding: 60px;
+    overflow-y: auto;
+    transition: transform .5s cubic-bezier(.165, .84, .44, 1);    /*transform: translate3d(100%, 0, 0);*/
+}
+section.work-editor h1 {
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: .2em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+section.work-editor form {
+    padding: 50px 0px;
+}
+section.work-editor i {
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background: #0F0F0F;
+    left: 0;
+    top: 0;
+    color: #fff;
+    line-height: 50px;
+    font-size: 1.75em;
+    cursor: pointer;
+}
+section.work-editor .toolbar {
+    text-align: right;
+}
+section.work-editor .toolbar .button {
+    margin: 0;
+    margin-left: 15px;
+}

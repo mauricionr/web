@@ -1,0 +1,21 @@
+nav.crumbs {
+    border-top: 1px solid #dcdcdc;
+    background-color: #f3f3f3;
+    height: 70px;
+    line-height: 70px;
+}
+nav.crumbs .crumb {
+    text-transform: uppercase;
+    line-height: 70px;
+    letter-spacing: .2em;
+    font-weight: 400;
+    color: #9d9d9d;
+    font-size: .75em;
+}
+nav.crumbs .crumb span {
+    padding: 0px 8px;
+}
+nav.crumbs a.active {
+    font-weight: 700;
+    color: #747474;
+}

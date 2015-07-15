@@ -1,0 +1,39 @@
+section.work-page {
+}
+section.work-page .top {
+    margin-top: 150px;
+    display: flex;
+}
+section.work-page .top .wrap {
+    flex: 0 0 65%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+}
+section.work-page .top .details {
+    margin-left: 55px;
+    flex-grow: 1;
+}
+section.work-page .top .details {
+    line-height: 1.4em;
+}
+section.work-page .top .details h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .05em;
+    font-size: 1.4em;
+}
+section.work-page .top .details h2 {
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 300;
+}
+section.work-page .top .details h3 {
+    font-size: 1.2em;
+    color: #3498db;
+}
+section.work-page .top .details p {
+    line-height: 2em;
+    color: #9d9d9d;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
+}

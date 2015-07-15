@@ -1,0 +1,31 @@
+body {
+    font-family: "Montserrat";
+    color: #0F0F0F;
+}
+* {
+    box-sizing: border-box;
+}
+input:focus, select:focus {
+    outline: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+section.root {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+.content {
+    width: 1230px;
+    margin: 0 auto;
+    padding: 0px 60px;
+}
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

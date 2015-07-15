@@ -1,0 +1,12 @@
+ul.grid {
+    width: calc(100% + 30px);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+ul.grid > li {
+    padding: 15px;
+    width: calc(100%/3);
+}
