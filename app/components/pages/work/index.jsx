@@ -7,6 +7,7 @@ import {Link} from 'react-router'
 import Crumbs from 'crumbs'
 import Button from 'button'
 import WorkEditor from 'work-editor'
+import Numeral from 'numeral'
 
 
 @connect(state => {
@@ -46,8 +47,8 @@ export default class WorkPage extends React.Component {
 						</div>
 						<div className="details">
 							<h1>{item.work.name}</h1>
-							<h2>by {item.artist.id}</h2>
-							{item.work.price ? <h3>${item.work.price}</h3> : false}
+							<h2>by {item.artist.name}</h2>
+							{item.work.price ? <h3>{Numeral(item.work.price).format('$0,0[.]00')}</h3> : false}
 							<p>{item.work.description}</p>
 							{
 								() => {
@@ -55,7 +56,7 @@ export default class WorkPage extends React.Component {
 										return <Button onClick={this.toggleEdit.bind(this)} >Edit</Button>
 									if(inCart)
 										return <Button onClick={this.removeCart.bind(this)}>Remove From Cart</Button>
-									if(true)
+									//if(item.work.sale && item.work.price > 0)
 										return <Button onClick={this.addCart.bind(this)}>Add To Cart</Button>
 								}()
 							}

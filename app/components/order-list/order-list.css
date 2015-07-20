@@ -1,0 +1,51 @@
+ul.order-list {
+	display: flex;
+	flex-direction: column;
+	/*
+	border-bottom: 1px solid #dcdcdc;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+	*/
+}
+ul.order-list li {
+	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+}
+ul.order-list li img {
+	height: 150px;
+	width: auto;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+}
+
+ul.order-list li .details  {
+	line-height: 1.6em;
+	flex-grow: 1;
+}
+ul.order-list li .details h1 {
+	text-transform: uppercase;
+  	font-weight: 600;
+  	letter-spacing: .05em;
+  	font-size: 1.4em;
+}
+
+ul.order-list li .details h2 {
+	text-transform: uppercase;
+  	font-size: .8em;
+	font-weight: 300;
+}
+
+ul.order-list li .details h3 {
+	font-size: 1.2em;
+	color: #3498db;
+}
+
+ul.order-list li i {
+	font-size: 2em;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+ul.order-list li .status a {
+	cursor: pointer;
+}

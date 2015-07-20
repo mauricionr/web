@@ -9,7 +9,7 @@ import Root from "root"
 import Axios from "axios"
 
 Axios.interceptors.request.use(function(config) {
-	config.url = "http://api.aopdex.com/" + config.url;
+	config.url = "http://api.ironbay.digital/" + config.url;
 	return config
 })
 

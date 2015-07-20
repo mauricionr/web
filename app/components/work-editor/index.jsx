@@ -32,7 +32,7 @@ export default class WorksEditor extends React.Component {
 					<input type="text" onChange={this.easyModify.bind(this, "name")} value={item.work.name} />
 
 					<label>Artist</label>
-					<input type="text" value={item.artist.id} onChange={this.modify.bind(this, (value, x) => x.artist.id = value )} />
+					<input type="text" value={item.artist.name} onChange={this.modify.bind(this, (value, x) => x.artist.name = value )} />
 
 					<label>Price</label>
 					<input type="text" value={item.work.price} onChange={this.modify.bind(this, (value, x) => {
@@ -42,12 +42,21 @@ export default class WorksEditor extends React.Component {
 						x.work.price = num
 					})} />
 
+					<label>On Sale</label>
+					<select onChange={this.modify.bind(this, (value, x) => {
+							x.work.sale = value == 'true'
+						})} value={item.work.sale}>
+						<option value={true}>Yes</option>
+						<option value={false}>No</option>
+					</select>
+
+
 					<label>Description</label>
-					<textarea onChange={this.easyModify.bind(this, "description")} 
+					<textarea onChange={this.easyModify.bind(this, "description")}
 						rows="5" value={item.work.description}  />
 
 					<label>Link Image</label>
-					<textarea onChange={this.easyModify.bind(this, "image")} 
+					<textarea onChange={this.easyModify.bind(this, "image")}
 						rows="5" value={item.work.image} />
 
 					<label>Image</label>
@@ -103,7 +112,7 @@ export default class WorksEditor extends React.Component {
 		const { item, dispatch } = this.props
 		Imgur(file, link => {
 			dispatch(Works.modifyWork(item.work.id, (x) => {
-				x.work.image = link 
+				x.work.image = link
 			}))
 		})
 	}

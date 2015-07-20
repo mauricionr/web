@@ -2,7 +2,7 @@ import createStore from 'util/store'
 import Axios from 'axios'
 
 export default createStore({
-	me : false
+	me : undefined 
 }, {
 
 	authSuccess(state,action) {

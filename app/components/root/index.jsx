@@ -15,6 +15,9 @@ export default class Root extends React.Component {
 		dispatch(Auth.me())
 	}
 	render() {
+		if (this.props.me == undefined) {
+			return false
+		}
 		return (
 			<section className="root">
 				<Header />

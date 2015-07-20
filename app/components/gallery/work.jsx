@@ -13,7 +13,7 @@ export default class Work extends React.Component{
 					</div>
 					<div className="details">
 						<h1>{item.work.name || "Untitled"}</h1>
-						<h2>{item.artist.id || "Unknown"}</h2>
+						<h2>{item.artist.name || "Unknown"}</h2>
 					</div>
 				</div>
 			</Link>

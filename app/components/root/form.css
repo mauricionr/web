@@ -6,7 +6,8 @@ form label {
     margin-bottom: 8px;
     display: block;
 }
-form input {
+form input, form select {
+    background: transparent;
     width: 100%;
     border: 0;
     font-size: 1em;

@@ -23,6 +23,7 @@ export default class Header extends React.Component {
 						{!me ? <Link to='/login'>Login</Link> : false}
 						{!me ? <Link to='/register'>Register</Link> : false}
 						{me ? <Link to={`/user/${me.id}`}>{me.name}</Link> : false}
+						{me ? <Link to='/orders'>Orders</Link> : false}
 						{me ? <a onClick={this.logout} href="#">Logout</a> : false}
 						<Cart />
 					</nav>

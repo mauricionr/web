@@ -1,0 +1,15 @@
+section.orders-page > .content {
+	margin-top: 50px;
+}
+
+section.orders-page > .content > h1 {
+  	font-size: 1.6em;
+  	margin-bottom: 50px;
+  	border-bottom: 2px solid;
+  	display: inline-block;
+  	padding-bottom: 10px;
+}
+
+section.orders-page .order-list {
+	margin-bottom: 100px;
+}

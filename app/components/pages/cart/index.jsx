@@ -5,19 +5,39 @@ import { connect } from 'redux/react'
 import Crumbs from 'crumbs'
 import Works from 'actions/works'
 import Cart from 'actions/cart'
+import Numeral from 'numeral'
+import Button from 'button'
+import OrderList from 'order-list'
 
 @connect((state) => {
 	return {
 		cart : state.cart,
 		works : state.works,
+		auth : state.auth,
 	}
 })
 export default class CartPage extends React.Component {
+	static contextTypes = {
+		router: React.PropTypes.object
+	}
 	componentWillMount() {
 		const { cart, dispatch } = this.props
 		Object.keys(cart.items).forEach((key) => {
+			console.log(cart)
 			dispatch(Works.refreshWork(key))
 		})
+		this.handler = StripeCheckout.configure({
+			key: 'pk_test_E1xIkZYoNbvirdAfoWnsbd4n',
+		   	token: (token) => {
+				dispatch(Cart.checkout(
+					Object.keys(this.props.cart.items),
+					this.context.router.transitionTo
+				))
+			}
+ 		});
+	}
+	componentWillReceiveProps() {
+
 	}
 	render () {
 		const { cart, works} = this.props
@@ -35,37 +55,32 @@ export default class CartPage extends React.Component {
 					<Link to='/cart'>Cart</Link>
 				</Crumbs>
 				<div className='content'>
-					<ul className='items'>
-					{
-						items.map(item => {
-							if(!item)
-								return
-							return (
-								<li>
-									<i onClick={this.removeCart.bind(this, item.work.id)}>×</i>
-									<div className="details">
-										<h1>{item.work.name}</h1>
-										<h2>{item.artist.id}</h2>
-										<h3>${item.work.price}</h3>
-									</div>
-									<Link to={`/work/${item.work.id}`} >
-										<img src={item.work.image} />
-									</Link>
-								</li>
-							)
-						})
-					}
-					</ul>
+					<OrderList items={items} onRemove={this.removeCart.bind(this)} />
 					<div className="summary">
-						<span>Total: ${cost}</span>
+						<span>Total: {Numeral(cost).format('$0,0[.]00')}</span>
 					</div>
+					<Button onClick={this.checkout.bind(this, cost)}>Checkout</Button>
 				</div>
 
 			</section>
 		)
 	}
-	removeCart(id) {
+	removeCart(item) {
 		const { dispatch } = this.props
-		dispatch(Cart.removeCart(id))
+		dispatch(Cart.removeCart(item.work.id))
+	}
+	checkout(cost) {
+		const {dispatch, cart, auth} = this.props
+		const {router} = this.context
+		if(!auth.me) {
+			router.transitionTo("/login")
+			return
+		}
+	    this.handler.open({
+			name: 'Checkout',
+			email : auth.me.email,
+  			amount: cost * 100
+	    });
+
 	}
 }
